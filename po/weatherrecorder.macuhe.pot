@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherrecorder.macuhe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-18 18:31+0000\n"
+"POT-Creation-Date: 2018-02-19 19:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,60 @@ msgstr ""
 msgid "Información del producto"
 msgstr ""
 
-#: ../qml/Main.qml:28
+#: ../qml/Main.qml:19
+msgid "Registros del tiempo"
+msgstr ""
+
+#: ../qml/Main.qml:43
 msgid "Resgistros del tiempo"
 msgstr ""
 
-#: ../qml/Main.qml:38
+#: ../qml/Main.qml:53
 msgid "Acerca de"
+msgstr ""
+
+#: ../qml/Main.qml:64
+msgid "Ajustes"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:11
+msgid "Configuración"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:21
+msgid "Ciudad:"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:38
+msgid "Escala de temperatura:"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:43
+msgid "Farenheit"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:43
+msgid "Celsius"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:52
+msgid "Guardar"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:56
+msgid "Introduzca una ciudad"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:68
+msgid "Operación ejecutada con éxito"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:72 ../qml/AppConfiguration.qml:76
+msgid "¡Error!"
+msgstr ""
+
+#: ../qml/AppConfiguration.qml:84
+msgid "Cerrar"
 msgstr ""
 
 #: WeatherRecorder.desktop.in.h:1
