@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherrecorder.macuhe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-19 19:36+0000\n"
+"POT-Creation-Date: 2018-02-22 19:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,62 +21,70 @@ msgstr ""
 msgid "Información del producto"
 msgstr ""
 
-#: ../qml/Main.qml:19
-msgid "Registros del tiempo"
+#: ../qml/Main.qml:49
+msgid "Resgistro de temperaturas"
 msgstr ""
 
-#: ../qml/Main.qml:43
-msgid "Resgistros del tiempo"
-msgstr ""
-
-#: ../qml/Main.qml:53
+#: ../qml/Main.qml:59
 msgid "Acerca de"
 msgstr ""
 
-#: ../qml/Main.qml:64
+#: ../qml/Main.qml:70
 msgid "Ajustes"
+msgstr ""
+
+#: ../qml/Main.qml:86 ../qml/AppConfiguration.qml:18
+msgid "Ciudad:"
+msgstr ""
+
+#: ../qml/Main.qml:106
+msgid "Escala:"
+msgstr ""
+
+#: ../qml/Main.qml:126
+msgid "Añadir temperatura"
+msgstr ""
+
+#: ../qml/Main.qml:130
+msgid "Buscar temperatura"
+msgstr ""
+
+#: ../qml/Main.qml:140
+msgid "Analíticas"
 msgstr ""
 
 #: ../qml/AppConfiguration.qml:11
 msgid "Configuración"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:21
-msgid "Ciudad:"
-msgstr ""
-
-#: ../qml/AppConfiguration.qml:38
+#: ../qml/AppConfiguration.qml:35
 msgid "Escala de temperatura:"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:43
+#: ../qml/AppConfiguration.qml:40
 msgid "Farenheit"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:43
+#: ../qml/AppConfiguration.qml:40
 msgid "Celsius"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:52
+#: ../qml/AppConfiguration.qml:49
 msgid "Guardar"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:56
+#: ../qml/AppConfiguration.qml:53
 msgid "Introduzca una ciudad"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:68
-msgid "Operación ejecutada con éxito"
-msgstr ""
-
-#: ../qml/AppConfiguration.qml:72 ../qml/AppConfiguration.qml:76
+#: ../qml/AppConfiguration.qml:76 ../qml/AppConfiguration.qml:80
 msgid "¡Error!"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:84
+#: ../qml/AppConfiguration.qml:88
 msgid "Cerrar"
 msgstr ""
 
 #: WeatherRecorder.desktop.in.h:1
-msgid "WeatherRecorder"
+msgid "Weather Recorder"
 msgstr ""

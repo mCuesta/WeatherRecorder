@@ -16,10 +16,10 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-    property string appTitle: i18n.tr("Registros del tiempo")
     property string appVersion: "1.0"
 
-    // El archivo de configuración se guarda en ~userHome/.config/<applicationName>/<applicationName>.conf
+    // El archivo de configuración se guarda en ~userHome/phablet/.config/<applicationName>/<applicationName>.conf
+    // y ejecutando clickable --desktop se guarda en /tmp/clickable/config/<applicationName>/<applicationName>.conf
     Settings {
         id: settings
         property bool isFirstUse: true
@@ -38,9 +38,16 @@ MainView {
     Page {
         id: mainPage
 
+        Image {
+            source: "../assets/snow.jpg"
+            anchors.top: pageHeader.bottom
+            width: parent.width
+            height: parent.height - pageHeader.height
+        }
+
         header: PageHeader {
             id: pageHeader
-            title: i18n.tr("Resgistros del tiempo")
+            title: i18n.tr("Resgistro de temperaturas")
             StyleHints {
                 backgroundColor: "transparent"
             }
@@ -68,6 +75,72 @@ MainView {
                 }
             ]
         }
+
+        Row {
+            id: row1
+            anchors.left: parent.left
+            anchors.top: pageHeader.bottom
+            anchors.margins: units.gu(1)
+            spacing: units.gu(1)
+
+            Label {
+                text: i18n.tr("Ciudad:")
+                textSize: Label.Large
+                font.bold: true
+            }
+
+            Label {
+                id: temperatureCityLabel
+                //text: Storage.getConfigParamValue('city')
+                textSize: Label.Large
+            }
+        }
+
+        Row {
+            id: row2
+            anchors.left: parent.left
+            anchors.top: row1.bottom
+            anchors.margins: units.gu(1)
+            spacing: units.gu(1)
+            
+            Label {
+                text: i18n.tr("Escala:")
+                textSize: Label.Large
+                font.bold: true
+            }
+
+            Label {
+                id: temperatureUnitLabel
+                //text: Storage.getConfigParamValue('temperatureUnit')
+                textSize: Label.Large
+            }
+        }
+
+        Row {
+            id: row3
+            anchors.left: parent.left
+            anchors.top: row2.bottom
+            anchors.margins: units.gu(1)
+            spacing: units.gu(1)
+
+            Button {
+                text: i18n.tr("Añadir temperatura")
+            }
+
+            Button {
+                text: i18n.tr("Buscar temperatura")
+            }
+        }
+
+        Row {
+            anchors.left: parent.left
+            anchors.top: row3.bottom
+            anchors.margins: units.gu(1)
+
+            Button {
+                text: i18n.tr("Analíticas")
+            }
+        }
     }
 
     Component.onCompleted: {
@@ -78,9 +151,16 @@ MainView {
             Storage.insertDefaultConfigValues();
             PopupUtils.open(appConfigurationDialog);
             settings.isFirstUse = false;
-        } else {
-            pageHeader.title = appTitle + " en " + Storage.getConfigParamValue('city');
-            var aux = Storage.getConfigParamValue('temperatureUnit');
+        }
+        temperatureCityLabel.text = Storage.getConfigParamValue('city');
+        var aux = Storage.getConfigParamValue('temperatureUnit');
+        switch (aux) {
+            case "Celsius":
+                temperatureUnitLabel.text = "ºC";
+                break;
+            case "Farenheit":
+                temperatureUnitLabel.text = "ºF";
+                break;
             }
     }
 }

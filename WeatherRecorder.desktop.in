@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=WeatherRecorder
+_Name=Weather Recorder
 Exec=qmlscene qml/Main.qml
 Icon=assets/logo.svg
 Terminal=false

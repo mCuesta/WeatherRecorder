@@ -10,9 +10,6 @@ Dialog {
     id: appConfigurationDialog
     title: i18n.tr("Configuración")
 
-    width: units.gu(45)
-    height: units.gu(75)
-
     Row {
         spacing: units.gu(2)
 
@@ -63,11 +60,18 @@ Dialog {
                     // Actualizar los valores en la tabla de configuración
                     res = Storage.updateConfigParamValue('city', cityField.text);
                     if (res === 'OK') {
+                        temperatureCityLabel.text = cityField.text
                         res = Storage.updateConfigParamValue('temperatureUnit', temperatureUnitName);
                         if (res === 'OK') {
-                            operationResultLabel.text = i18n.tr("Operación ejecutada con éxito");
-                            operationResultLabel.color = UbuntuColors.green;
-                            pageHeader.title = appTitle + " en " + cityField.text;
+                            switch (temperatureUnitName) {
+                                case "Celsius":
+                                    temperatureUnitLabel.text = "ºC";
+                                    break;
+                                case "Farenheit":
+                                    temperatureUnitLabel.text = "ºF";
+                                    break;
+                            }
+                            PopupUtils.close(appConfigurationDialog)
                         } else {
                             operationResultLabel.text = i18n.tr("¡Error!");
                             operationResultLabel.color = UbuntuColors.red;
