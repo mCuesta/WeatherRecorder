@@ -10,7 +10,7 @@ function isEmptyValue(valueToCheck) {
         return false;
 }
 
-// Comprueba si el valor de entrada contiene letras o caracteres no válidos (es decir, no es numérico)
-function hasInvalidChar(fieldTxtValue) {
-    return /[<>?%#;a-z*A-Z]|&#/.test(fieldTxtValue) ? true : false;
+// Comprueba si el valor de entrada contiene una temperatura válida
+function hasInvalidTemp(fieldTxtValue) {
+    return /^[+-]?\d+([,.]\d+)?$/.test(fieldTxtValue) ? false : true;
 }

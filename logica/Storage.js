@@ -81,3 +81,50 @@ function updateConfigParamValue(paramName, paramValue) {
         });
     return res;
 }
+
+/* Devuelve un valor de temperatura para la fecha dada. Si no existe devuelve 'N/A' (no disponible) */
+function getTemperatureValueByDate(date) {
+
+    var db = getDatabase();
+    var targetDate = new Date (date);
+
+    /* devuelve una fecha formateada como: 2018-02-28 (aaaa-mm-dd) */
+    var fullTargetDate = DateUtils.formatDateToString(targetDate);
+    var rs = "";
+
+    db.transaction(function(tx) {
+        rs = tx.executeSql("SELECT temperature_value FROM temperature t where date(t.date) = date('"+fullTargetDate+"')");
+    });
+
+    /* comprobar si falta valor o no */
+    if (rs.rows.length > 0) {
+        return rs.rows.item(0).temperature_value;
+    } else {
+        return "N/A";
+    }
+}
+
+/* Inserta un nuevo valor de temperatura para la fecha dada */
+function insertTemperature(date,tempValue, escala) { 
+
+    var db = getDatabase();
+    var fullDate = new Date (date);
+    var res = "";
+
+    /* devuelve una fecha formateada como: 2018-02-28 (aaaa-mm-dd) */
+    var dateFormatted = DateUtils.formatDateToString(fullDate);
+
+    /* convierte grados Fahrenheit a Celsius
+       todas las temperaturas se almacenan en Celsius */
+    var tempFormatted = (escala === "ºC") ? tempValue : (tempValue - 32) * 5 / 9;
+
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('INSERT INTO temperature (date, temperature_value) VALUES (?,?);', [dateFormatted, tempFormatted]);
+        if (rs.rowsAffected > 0) {
+           res = "OK";
+       } else {
+           res = "Error";
+       }
+    });
+    return res;
+}

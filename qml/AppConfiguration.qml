@@ -37,7 +37,7 @@ Dialog {
 
         ListItem.ItemSelector {
             id: temperatureUnitSelector
-            model: [i18n.tr("Farenheit"), i18n.tr("Celsius")]
+            model: [i18n.tr("Fahrenheit"), i18n.tr("Celsius")]
             expanded: true
         }
     }
@@ -67,7 +67,7 @@ Dialog {
                                 case "Celsius":
                                     temperatureUnitLabel.text = "ºC";
                                     break;
-                                case "Farenheit":
+                                case "Fahrenheit":
                                     temperatureUnitLabel.text = "ºF";
                                     break;
                             }
