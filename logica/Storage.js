@@ -195,3 +195,18 @@ function updateTemperature(date, tempValue, escala) {
 
     return rs.rowsAffected;
 }
+
+/* Elimina TODOS los valores de temperatura guardados, NO la tabla
+   Devuelve el número de filas eliminadas */
+function deleteAllTemperatureValues(){
+    var db = getDatabase();
+    var rs = "";
+
+    db.transaction(
+        function(tx) {
+            rs = tx.executeSql('DELETE FROM temperature;');
+        }
+    );
+
+    return rs.rowsAffected;
+}

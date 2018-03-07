@@ -52,6 +52,11 @@ MainView {
     }
 
     Component {
+        id: dataBaseEraser
+        DataBaseEraserDialog{}
+    }
+
+    Component {
         id: insertPage
         InsertPage{}
     }
@@ -101,6 +106,14 @@ MainView {
 
                 // Acciones disponibles en trailingActionBar (la del lado derecho)
                 trailingActionBar.actions: [
+                    Action {
+                        iconName: "delete"
+                        text: i18n.tr("Eliminar")
+                        onTriggered: {
+                            PopupUtils.open(dataBaseEraser)
+                        }
+                    },
+
                     Action {
                         iconName: "settings"
                         text: i18n.tr("Ajustes")
