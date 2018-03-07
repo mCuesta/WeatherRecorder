@@ -22,7 +22,6 @@ Dialog {
             id: cityField
             width: units.gu(22)
         }
-
     }
 
     Column {

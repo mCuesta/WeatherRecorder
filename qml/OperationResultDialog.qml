@@ -9,14 +9,9 @@ Dialog {
 
     /* Parámetros de entrada: el texto del mensaje a mostrar y el color a usar */
     property string msg;
-    property color labelColor;
 
     title: i18n.tr("Resultado de la operación")
-
-    Label{
-        text: i18n.tr(msg)
-        color: labelColor
-    }
+    text: i18n.tr(msg)
 
     Button {
         text: "Cerrar"

@@ -11,6 +11,14 @@ import "../logica/DateUtils.js" as DateUtils
 Page {
     id: insertPage
 
+    // Imagen de fondo
+    Image {
+        source: "../assets/snow.jpg"
+        anchors.top: pageHeader.bottom
+        width: parent.width
+        height: parent.height - pageHeader.height
+    }
+
     header: PageHeader {
         id: pageHeader
         title: i18n.tr("Añadir temperatura")
@@ -44,7 +52,7 @@ Page {
         anchors.top: insertHeader.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.margins: units.gu(2)
+        anchors.margins: units.gu(1.5)
         spacing: units.gu(1)
 
         Row {
@@ -52,9 +60,10 @@ Page {
 
             TextField {
                 id: temperatureField
-                width: units.gu(8)
+                width: units.gu(10)
             }
 
+            // Selector de escala
             ComboButton {
                 id: escala
                 width: units.gu(10)
@@ -120,7 +129,7 @@ Page {
         Row {
             Button {
                 text: i18n.tr("Añadir")
-                width: insertHeader.width
+                width: insertForm.width
                 onClicked: {
                     if(ValidationUtils.isEmptyValue(temperatureField.text) || ValidationUtils.hasInvalidTemp(temperatureField.text)) {
                         PopupUtils.open(invalidInputDialog);

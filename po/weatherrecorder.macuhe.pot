@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherrecorder.macuhe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-25 18:01+0000\n"
+"POT-Creation-Date: 2018-03-07 09:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,47 +21,47 @@ msgstr ""
 msgid "Información del producto"
 msgstr ""
 
-#: ../qml/Main.qml:30
+#: ../qml/Main.qml:31
 msgid "Operación ejecutada con éxito"
 msgstr ""
 
-#: ../qml/Main.qml:35
+#: ../qml/Main.qml:36
 msgid "ERROR: valor de entrada inválido"
 msgstr ""
 
-#: ../qml/Main.qml:40
+#: ../qml/Main.qml:41
 msgid "Valor ya insertado para el día: edítelo"
 msgstr ""
 
-#: ../qml/Main.qml:79
+#: ../qml/Main.qml:85
 msgid "Resgistro de temperaturas"
 msgstr ""
 
-#: ../qml/Main.qml:89
+#: ../qml/Main.qml:95
 msgid "Acerca de"
 msgstr ""
 
-#: ../qml/Main.qml:100
+#: ../qml/Main.qml:106
 msgid "Ajustes"
 msgstr ""
 
-#: ../qml/Main.qml:116 ../qml/AppConfiguration.qml:18
+#: ../qml/Main.qml:123 ../qml/AppConfiguration.qml:18
 msgid "Ciudad:"
 msgstr ""
 
-#: ../qml/Main.qml:135
+#: ../qml/Main.qml:143
 msgid "Escala predeterminada:"
 msgstr ""
 
-#: ../qml/Main.qml:154 ../qml/InsertPage.qml:16
+#: ../qml/Main.qml:165 ../qml/InsertPage.qml:24
 msgid "Añadir temperatura"
 msgstr ""
 
-#: ../qml/Main.qml:161
+#: ../qml/Main.qml:172 ../qml/SearchPage.qml:23
 msgid "Buscar temperatura"
 msgstr ""
 
-#: ../qml/Main.qml:171
+#: ../qml/Main.qml:179
 msgid "Analíticas"
 msgstr ""
 
@@ -69,44 +69,80 @@ msgstr ""
 msgid "Configuración"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:35
+#: ../qml/AppConfiguration.qml:34
 msgid "Escala de temperatura:"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:40
+#: ../qml/AppConfiguration.qml:39
 msgid "Fahrenheit"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:40
+#: ../qml/AppConfiguration.qml:39
 msgid "Celsius"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:49
+#: ../qml/AppConfiguration.qml:48
 msgid "Guardar"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:53
+#: ../qml/AppConfiguration.qml:52
 msgid "Introduzca una ciudad"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:76 ../qml/AppConfiguration.qml:80
+#: ../qml/AppConfiguration.qml:75 ../qml/AppConfiguration.qml:79
 msgid "¡Error!"
 msgstr ""
 
-#: ../qml/AppConfiguration.qml:88
+#: ../qml/AppConfiguration.qml:87 ../qml/ConfirmDeleteDialog.qml:18
 msgid "Cerrar"
 msgstr ""
 
-#: ../qml/InsertPage.qml:35
+#: ../qml/ConfirmDeleteDialog.qml:11
+msgid "¿Eliminar valor de temperatura?"
+msgstr ""
+
+#: ../qml/ConfirmDeleteDialog.qml:11
+msgid "(no se puede deshacer)"
+msgstr ""
+
+#: ../qml/ConfirmDeleteDialog.qml:24
+msgid "Eliminar"
+msgstr ""
+
+#: ../qml/InsertPage.qml:43
 msgid "Insercción de temperatura"
 msgstr ""
 
-#: ../qml/InsertPage.qml:122
+#: ../qml/InsertPage.qml:131
 msgid "Añadir"
 msgstr ""
 
-#: ../qml/OperationResultDialog.qml:14
+#: ../qml/OperationResultDialog.qml:13
 msgid "Resultado de la operación"
+msgstr ""
+
+#: ../qml/SearchPage.qml:47
+msgid "Búsqueda de temperaturas"
+msgstr ""
+
+#: ../qml/SearchPage.qml:96
+msgid "Buscar"
+msgstr ""
+
+#: ../qml/SearchPage.qml:103
+msgid "Temperatura no encontrada"
+msgstr ""
+
+#: ../qml/SearchPage.qml:107
+msgid "Temperatura encontrada"
+msgstr ""
+
+#: ../qml/SearchPage.qml:162
+msgid "Actualizar"
+msgstr ""
+
+#: ../qml/SearchPage.qml:177
+msgid "Borrar"
 msgstr ""
 
 #: WeatherRecorder.desktop.in.h:1

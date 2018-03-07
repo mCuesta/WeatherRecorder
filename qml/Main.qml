@@ -25,19 +25,20 @@ MainView {
         property bool isFirstUse: true
     }
 
+    /* Preparar componentes dedicados para mostrar mensajes personalizados */
     Component {
         id: operationSuccessDialog
-        OperationResultDialog{msg:i18n.tr("Operación ejecutada con éxito"); labelColor:UbuntuColors.green}
+        OperationResultDialog{msg:i18n.tr("Operación ejecutada con éxito")}
     }
 
     Component {
         id: invalidInputDialog
-        OperationResultDialog{msg:i18n.tr("ERROR: valor de entrada inválido"); labelColor:UbuntuColors.red}
+        OperationResultDialog{msg:i18n.tr("ERROR: valor de entrada inválido")}
     }
 
     Component {
         id: valueAlreadyInsertedDialog
-        OperationResultDialog{msg:i18n.tr("Valor ya insertado para el día: edítelo"); labelColor:UbuntuColors.red}
+        OperationResultDialog{msg:i18n.tr("Valor ya insertado para el día: edítelo")}
     }
 
     Component {
@@ -53,6 +54,11 @@ MainView {
     Component {
         id: insertPage
         InsertPage{}
+    }
+
+    Component {
+        id: searchPage
+        SearchPage{}
     }
 
     PageStack {
@@ -108,6 +114,7 @@ MainView {
             Row {
                 id: row1
                 anchors.left: parent.left
+                anchors.right: parent.right
                 anchors.top: pageHeader.bottom
                 anchors.margins: units.gu(1)
                 spacing: units.gu(1)
@@ -127,6 +134,7 @@ MainView {
             Row {
                 id: row2
                 anchors.left: parent.left
+                anchors.right: parent.right
                 anchors.top: row1.bottom
                 anchors.margins: units.gu(1)
                 spacing: units.gu(1)
@@ -143,31 +151,31 @@ MainView {
                 }
             }
 
-            Row {
+            Column {
                 id: row3
                 anchors.left: parent.left
+                anchors.right: parent.right
                 anchors.top: row2.bottom
                 anchors.margins: units.gu(1)
                 spacing: units.gu(1)
 
                 Button {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width
                     text: i18n.tr("Añadir temperatura")
-                    onClicked: {
-                        pageStack.push(insertPage)
-                    }
+                    onClicked: pageStack.push(insertPage)
                 }
 
                 Button {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width
                     text: i18n.tr("Buscar temperatura")
+                    onClicked: pageStack.push(searchPage)
                 }
-            }
-
-            Row {
-                anchors.left: parent.left
-                anchors.top: row3.bottom
-                anchors.margins: units.gu(1)
 
                 Button {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width
                     text: i18n.tr("Analíticas")
                 }
             }
@@ -190,7 +198,7 @@ MainView {
                     case "Fahrenheit":
                         temperatureUnitLabel.text = "ºF";
                         break;
-                    }
+                }
             }
         }
     }
