@@ -66,6 +66,11 @@ MainView {
         SearchPage{}
     }
 
+    Component {
+        id: chartPage
+        ChartPage{}
+    }
+
     PageStack {
         id: pageStack
 
@@ -190,6 +195,7 @@ MainView {
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: parent.width
                     text: i18n.tr("Analíticas")
+                    onClicked: pageStack.push(chartPage)
                 }
             }
 
