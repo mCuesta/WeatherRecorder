@@ -138,7 +138,7 @@ function deleteTemperatureByDate(date) {
 
     db.transaction(
         function(tx) {
-            rs = tx.executeSql("DELETE FROM temperature WHERE date('" + fullTargetDate + "')");
+            rs = tx.executeSql("DELETE FROM temperature WHERE date(temperature.date) = date('" + fullTargetDate + "')");
         }
     );
 

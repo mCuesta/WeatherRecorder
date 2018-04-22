@@ -61,6 +61,8 @@ Page {
             TextField {
                 id: temperatureField
                 width: units.gu(10)
+                // Solo se permiten dígitos.
+                inputMethodHints: Qt.ImhDigitsOnly
             }
 
             // Selector de escala

@@ -13,15 +13,15 @@ function getDatabase() {
 function getChartData(fromDate, toDate) {
 
     /* la cantidad de días del mes */
-    var monthDays = DateUtils.getDifferenceInDays(fromDate,toDate);
+    var monthDays = DateUtils.getDifferenceInDays(fromDate, toDate);
 
-    var xyDataSet = prepareEmptyDataset(fromDate,monthDays);
+    var xyDataSet = prepareEmptyDataset(fromDate, monthDays);
 
-    updateXYdataset(fromDate,toDate,xyDataSet);
+    updateXYdataset(fromDate, toDate, xyDataSet);
 
     /* activar solo para depuración: imprime el conjunto de datos XY
-    * printDataSet(xyDataSet);
-    */
+     * printDataSet(xyDataSet);
+     */
 
     var x = getXaxisValue(xyDataSet);
     var y = getYaxisValue(xyDataSet);
@@ -84,7 +84,7 @@ function prepareEmptyDataset(fromDate, monthDays) {
     var xyDataSet = {};
 
     for(var i = 0; i < monthDays + 1; i++) {
-        /* inicializar a cero el valor de temperatura para la fecha */
+        // Inicializar el valor de temperatura para la fecha
         xyDataSet[DateUtils.addDaysAndFormat(fromDate, i)] = 0;
     }
 
@@ -107,7 +107,7 @@ function updateXYdataset(fromDate, toDate, xyDataSet) {
         }
     );
 
-    /* update the values in the xy dataSet previously initialize to zero with the one coming from the Database */
+    /* Actualizar los valores en el conjunto de datos xy con los que se encuentran en la base de datos */
     for(var i = 0; i < rs.rows.length; i++) {
         xyDataSet[rs.rows.item(i).date] = rs.rows.item(i).temperature_value
     }         
@@ -115,11 +115,29 @@ function updateXYdataset(fromDate, toDate, xyDataSet) {
 
 /* Completa el QML ListModel utilizado para crear la leyenda del gráfico.
  * Los valores insertados se mostrarán mediante un componente Listview
+ * Con slice(8) cogemos sólo los días y transformamos el valor numérico 
+ * a dos decimales para su representación
 */
 function getChartLegendData(xyDataSet) {
     customRangeChartListModel.clear();
 
     for(var key in xyDataSet) {
-        customRangeChartListModel.append({"date": key, "temp": xyDataSet[key]});
+        customRangeChartListModel.append({"date": key.slice(8), "temp": xyDataSet[key].toFixed(2)});
     }
+}
+
+function mostrarGrafico() {
+    /* extraer el año, mes y día de la variable 'targetDate' que contiene un valor aaaa-mm-dd */
+    var dateParts = chartPage.targetDate.split("-");
+
+    /* construye un objeto de fecha JS usando tokens de cadena (el mes está basado en 0) */
+    var date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+
+    /* calcula el primer y último día del mes */
+    var firstDayMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+    var lastDayMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+    /* establece el conjunto de datos en el gráfico y hace visible el gráfico y la leyenda */
+    temperatureChart.chartData = getChartData(firstDayMonth, lastDayMonth);
+    chartAndLegendGridContainer.visible = true;
 }

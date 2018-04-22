@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherrecorder.macuhe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-14 15:46+0000\n"
+"POT-Creation-Date: 2018-04-22 17:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Insercción de temperatura"
 msgstr ""
 
-#: ../qml/InsertPage.qml:131
+#: ../qml/InsertPage.qml:133
 msgid "Añadir"
 msgstr ""
 
@@ -143,20 +143,16 @@ msgstr ""
 msgid "Temperatura encontrada"
 msgstr ""
 
-#: ../qml/SearchPage.qml:162
+#: ../qml/SearchPage.qml:164
 msgid "Actualizar"
 msgstr ""
 
-#: ../qml/SearchPage.qml:177
+#: ../qml/SearchPage.qml:179
 msgid "Borrar"
 msgstr ""
 
-#: ../qml/ChartPage.qml:27
+#: ../qml/ChartPage.qml:28
 msgid "Página analítica"
-msgstr ""
-
-#: ../qml/ChartPage.qml:71
-msgid "Mostrar gráfico"
 msgstr ""
 
 #: WeatherRecorder.desktop.in.h:1

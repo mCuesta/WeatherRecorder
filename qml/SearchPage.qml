@@ -148,6 +148,8 @@ Page {
             TextField {
                 id: temperatureFoundField
                 width: units.gu(10)
+                // Solo se permiten dígitos.
+                inputMethodHints: Qt.ImhDigitsOnly
             }
 
             Label {

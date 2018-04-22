@@ -87,6 +87,7 @@ Canvas {
   }
 
   onChartDataChanged: {
+      chartAnimationProgress = 0;
       requestPaint();
   }
 
